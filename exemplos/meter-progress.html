@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meter e progress</title>
+</head>
+<body>
+    <section>
+        <h1>Tag Meter</h1>
+        <P>Usar para exibir medidas.</P>
+        <meter min="0" max="100" value="0"></meter>
+        <meter min="0" max="100" value="25"></meter>
+        <meter min="0" max="100" value="50"></meter>
+        <meter min="0" max="100" value="75"></meter>
+        <meter min="0" max="100" value="100"></meter>
+    </section>
+    <section>
+        <h1>Tag Progress</h1>
+        <p>Use para mostrar o progresso de uma atividade.</p>
+        <progress></progress>
+        <p>Definindo valores é possível deixar fixo ou alterar o nível conforme a atividade via JS.</p>
+        <progress min="0" max="100" value="0"></progress>
+        <progress min="0" max="100" value="25"></progress>
+        <progress min="0" max="100" value="50"></progress>
+        <progress min="0" max="100" value="75"></progress>
+        <progress min="0" max="100" value="100"></progress>
+    </section>
+    <section>
+        <h1>Progress com JS</h1>
+        <p>A barra será preenchida de 10 em 10.</p>
+        <progress id="progress" min="0" max="100"></progress>
+    </section>
+    <script>
+        let progress = window.document.getElementById('progress');
+
+        const interval = setInterval(() => {
+            progress.value += 10;
+            if(progress.value >= 100) {
+                clearInterval(interval);
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
